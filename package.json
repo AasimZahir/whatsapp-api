@@ -1,0 +1,8 @@
+"dependencies": {
+  "puppeteer": "^21.0.0",
+  "whatsapp-web.js": "^1.23.0"
+},
+"scripts": {
+  "start": "node server.js",
+  "postinstall": "npx playwright install chromium"
+}

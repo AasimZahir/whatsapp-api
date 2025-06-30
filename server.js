@@ -3,7 +3,7 @@ const { Client, LocalAuth } = require('whatsapp-web.js');
 const qrcode = require('qrcode-terminal');
 
 const app = express();
-const PORT = process.env.PORT || 5000; // Render يُعين PORT تلقائيًا
+const PORT = process.env.PORT || 3000;
 
 const client = new Client({
   authStrategy: new LocalAuth(),
@@ -30,4 +30,6 @@ app.post('/send-message', async (req, res) => {
 });
 
 client.initialize();
-app.listen(PORT, () => console.log(`🖥️ الخادم يعمل على PORT: ${PORT}`));
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`Server running on port ${PORT}`);
+});
